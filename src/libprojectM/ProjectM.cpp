@@ -403,7 +403,8 @@ void ProjectM::Initialize()
     m_timeKeeper = std::make_unique<TimeKeeper>(m_settings.presetDuration,
                                                 m_settings.softCutDuration,
                                                 m_settings.hardCutDuration,
-                                                m_settings.easterEgg);
+                                                m_settings.easterEgg,
+                                                m_settings.fps);
 
     /** Nullify frame stash */
 

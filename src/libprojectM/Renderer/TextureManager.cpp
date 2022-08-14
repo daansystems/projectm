@@ -245,14 +245,16 @@ TextureSamplerDesc TextureManager::tryLoadingTexture(const std::string name)
     for (auto ext : extensions)
     {
         std::string filename = unqualifiedName + ext;
-        std::string fullURL = presetsURL + pathSeparator + filename;
+        std::string fullURL = "./textures" + pathSeparator + filename;
+
+        std::cerr << "Trying to load texture:" << fullURL << std::endl;
 
         texDesc = loadTexture(fullURL, name);
 
         if (texDesc.first != NULL)
         {
             std::cerr << "Located texture " << name << std::endl;
-            break;
+            return texDesc;
         }
     }
     

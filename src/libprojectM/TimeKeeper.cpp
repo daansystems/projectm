@@ -4,22 +4,26 @@
 
 #include <algorithm>
 
-TimeKeeper::TimeKeeper(double presetDuration, double smoothDuration, double hardcutDuration, double easterEgg)
+TimeKeeper::TimeKeeper(double presetDuration, double smoothDuration, double hardcutDuration, double easterEgg, size_t fps)
     : m_easterEgg(easterEgg)
     , m_presetDuration(presetDuration)
     , m_softCutDuration(smoothDuration)
     , m_hardCutDuration(hardcutDuration)
+    , m_fps(fps)
 {
     UpdateTimers();
 }
 
 void TimeKeeper::UpdateTimers()
 {
-    auto currentTime = std::chrono::high_resolution_clock::now();
+    // auto currentTime = std::chrono::high_resolution_clock::now();
+    // m_currentTime = std::chrono::duration<double>(currentTime - m_startTime).count();
+    m_currentTime = double(m_frameCounter) / double(m_fps);
+    // printf("CURRENTTIME: %f\n", m_currentTime);
 
-    m_currentTime = std::chrono::duration<double>(currentTime - m_startTime).count();
     m_presetFrameA++;
     m_presetFrameB++;
+    m_frameCounter++;
 }
 
 void TimeKeeper::StartPreset()

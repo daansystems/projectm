@@ -733,6 +733,8 @@ void Renderer::UpdateContext(PipelineContext& context)
 
 void Renderer::setToastMessage(const std::string& theValue)
 {
+  // TODO REMOVED
+	return;
 	// Initialize counters
 	lastTimeToast= nowMilliseconds();
 	currentTimeToast = nowMilliseconds();

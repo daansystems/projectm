@@ -81,7 +81,7 @@ public:
   bool correction{ true };
 
   bool noSwitch{ false };
-  bool writeNextFrameToFile;
+  bool writeNextFrameToFile{false};
 
   struct preset {
     int id;

@@ -86,7 +86,7 @@ void PresetInputs::Initialize ( int _gx, int _gy )
 	rad_per_pixel = 0;
 	ang_per_pixel = 0;
     pixelsx = 512;
-    pixelsx = 512;
+    pixelsy = 512;
     aspectx = 1.0;
     aspecty = 1.0;
 	// ***

@@ -22,7 +22,7 @@
 
 #include "Common.hpp"
 #include "PCM.hpp"
-#include "PipelineContext.hpp"
+#include "Renderer/PipelineContext.hpp"
 #include "event.h"
 #include "fatal.h"
 
@@ -113,7 +113,7 @@ public:
 
     explicit ProjectM(const std::string& configurationFilename, Flags flags = Flags::None);
 
-    explicit ProjectM(const class Settings& configurationFilename, Flags flags = Flags::None);
+    explicit ProjectM(const class Settings& settings, Flags flags = Flags::None);
 
     virtual ~ProjectM();
 

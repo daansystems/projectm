@@ -7,7 +7,7 @@ class TimeKeeper
 
 public:
 
-    TimeKeeper(double presetDuration, double smoothDuration, double hardcutDuration, double easterEgg);
+    TimeKeeper(double presetDuration, double smoothDuration, double hardcutDuration, double easterEgg, size_t fps);
 
     void UpdateTimers();
 
@@ -95,6 +95,9 @@ private:
     int m_presetFrameB{ 0 };
 
     bool m_isSmoothing{ false };
+    size_t m_fps{0};
+
+    uint64_t m_frameCounter{0};
 
 
 };
